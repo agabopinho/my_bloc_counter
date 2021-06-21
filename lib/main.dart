@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_bloc_counter/blocs/blocs.dart';
 
 import 'blocs/blocs.dart';
 
@@ -67,7 +66,13 @@ class MyHomePage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 5.0),
               child: FloatingActionButton(
-                child: Icon(Icons.add),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.add),
+                  ],
+                ),
                 onPressed: () => context.read<CounterBloc>().add(Increment(count: 10)),
               ),
             ),
